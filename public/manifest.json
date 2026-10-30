@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Monavi",
+  "version": "0.1.0",
+  "description": "Monavi in-page assistant",
+  "permissions": ["storage", "tabs", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Monavi"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

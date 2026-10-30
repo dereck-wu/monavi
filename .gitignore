@@ -1,0 +1,7 @@
+node_modules
+dist
+.chrome-dev-profile
+demo
+*.pem
+*.crx
+.DS_Store
